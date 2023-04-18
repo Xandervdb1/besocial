@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create page</title>
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/posts">All posts</a>
-        <a href="/create-post"><button>Post new project</button></a>
-    </nav>
-    <h1>Post a new project</h1>
+@extends('layout')
+
+@section('title', 'BeSocial')
+@section('header', 'Post a new project')
+
+@section('content')
     <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
@@ -37,5 +28,4 @@
         </div>
         <button type="submit">Post your project!</button>
     </form>
-</body>
-</html>
+@endsection
