@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         $tags = ["frontend", "backend", "design", "API", "HTML/CSS", "Javascript", "PHP", "Java"];
         \App\Models\User::factory(4)->create();
-        \App\Models\Post::factory(10)->create();
+        \App\Models\Post::factory(20)->create();
         foreach ($tags as $tag) {
             \App\Models\Tag::factory()->create([
                 'tag' => $tag,

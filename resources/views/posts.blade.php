@@ -10,6 +10,7 @@
     <nav>
         <a href="/">Home</a>
         <a href="/posts">All posts</a>
+        <a href="/create-post"><button>Post new project</button></a>
     </nav>
     <h1>All posts</h1>
     <ul>

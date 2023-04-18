@@ -7,6 +7,11 @@
     <title>Profile page</title>
 </head>
 <body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/posts">All posts</a>
+        <a href="/create-post"><button>Post new project</button></a>
+    </nav>
     <h1>{{$user->name}}</h1>
     @foreach ($user->posts as $post)
         <h2>{{$post->title}}</h2>

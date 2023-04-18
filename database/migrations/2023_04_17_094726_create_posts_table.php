@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->string('link');
             $table->string('short_desc');
             $table->text('description');
+            $table->text("thumbnailsrc");
             $table->foreignId('user_id');
             $table->timestamps();
         });

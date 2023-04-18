@@ -22,9 +22,11 @@ class PostFactory extends Factory
         $slug = Str::slug($title);
         return [
             'title' => $title,
-            'short_desc' => fake()->sentence(),
             'slug' => $slug,
+            'link' => 'www.google.com',
+            'short_desc' => fake()->sentence(),
             'description' => fake()->text(),
+            'thumbnailsrc' => 'storage/thumbnails/default.png',
             'user_id' => User::all()->random()->id,
         ]; 
     }

@@ -21,3 +21,6 @@ Route::get('/posts', [PostController::class, 'showAll']);
 Route::get('/post/{post:slug}', [PostController::class, 'showDetail']);
 
 Route::get('/profile/{user:slug}', [UserController::class, 'showProfile']);
+
+Route::get('/create-post', [PostController::class, 'showForm']);
+Route::post('/create-post', [PostController::class, 'submitForm']);
