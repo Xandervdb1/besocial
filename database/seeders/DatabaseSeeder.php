@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Tag;
 use Illuminate\Database\Seeder;
+use App\Models\Post;
+use App\Models\Tag;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +24,11 @@ class DatabaseSeeder extends Seeder
             \App\Models\Tag::factory()->create([
                 'tag' => $tag,
             ]);
+        }
+        $posts = Post::all();
+        foreach ($posts as $post) {
+            $post->tags()->attach(Tag::all()->random()->id);
+            $post->tags()->attach(Tag::all()->random()->id);
         }
         
         // \App\Models\User::factory()->create([
