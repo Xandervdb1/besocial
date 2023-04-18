@@ -25,8 +25,8 @@ class PostFactory extends Factory
             'short_desc' => fake()->sentence(),
             'slug' => $slug,
             'description' => fake()->text(),
-            'tag1_id' => rand(1, 5),
-            'tag2_id' => rand(1, 5),
+            'tag1_id' => rand(1, 8),
+            'tag2_id' => rand(1, 8),
             'user_id' => User::all()->random()->id,
         ]; 
     }
