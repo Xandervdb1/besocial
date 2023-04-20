@@ -18,6 +18,7 @@ class TagFactory extends Factory
     {
         return [
             'tag' => fake()->word(),
+            'slug' => fake()->word(),
             'color' => fake()->hexColor(),
         ];
     }

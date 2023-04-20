@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,12 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $tags = ["frontend", "backend", "design", "API", "HTML/CSS", "Javascript", "PHP", "Java"];
+        $tags = ["Frontend", "Backend", "Design", "API", "HTML/CSS", "Javascript", "PHP", "Java"];
         \App\Models\User::factory(4)->create();
         \App\Models\Post::factory(20)->create();
         foreach ($tags as $tag) {
             \App\Models\Tag::factory()->create([
                 'tag' => $tag,
+                'slug' => Str::slug($tag),
             ]);
         }
         $posts = Post::all();

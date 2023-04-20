@@ -19,6 +19,7 @@ Route::get('/', [PostController::class, 'showHome'])->name('index');
 
 Route::get('/posts', [PostController::class, 'showAll']);
 Route::get('/post/{post:slug}', [PostController::class, 'showDetail']);
+Route::get('/posts/{tag:slug}', [PostController::class, 'filterOnTag']);
 
 Route::get('/profile/{user:slug}', [UserController::class, 'showProfile']);
 
