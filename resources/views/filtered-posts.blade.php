@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title', 'BeSocial')
-@section('header', 'All Posts')
+@section('header', 'All Posts tagged with ' . $tag->tag)
 
 @section('content')
 <ul class="cardcontainer">
-    @foreach ($posts as $post)
+    @foreach ($tag->posts as $post)
         <x-project-card :post="$post"/>
     @endforeach
 </ul>

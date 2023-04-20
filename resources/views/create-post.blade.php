@@ -4,7 +4,7 @@
 @section('header', 'Post a new project')
 
 @section('content')
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data" class="createform">
         @csrf
         <div>
             <label for="title">Project Title</label>
@@ -26,6 +26,6 @@
             <label for="thumbnail">Thumbnail</label>
             <input type="file" name="thumbnail" id="thumbnail">
         </div>
-        <button type="submit">Post your project!</button>
+        <div><button type="submit">Post your project!</button></div>
     </form>
 @endsection
