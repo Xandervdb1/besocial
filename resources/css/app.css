@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgba(168,218,220,0.3);
+    background-color: rgba(168,218,220,0.1);
     margin-bottom: 1rem;
 }
 
@@ -22,12 +22,22 @@ nav {
     color: #F1FAEE;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
 }
 
 nav a {
     display: flex;
     align-items: center;
+}
+
+nav div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+}
+
+nav .icon {
+    font-size: 1.2rem;
 }
 
 button {
@@ -50,12 +60,12 @@ h2 {
     padding: 1rem;
 }
 
-.indexheader {
-    color: #F1FAEE;
+.underline {
+    text-decoration: underline;
 }
 
-.hidden {
-    display: none;
+.indexheader {
+    color: #F1FAEE;
 }
 
 .hero {
@@ -82,7 +92,7 @@ h2 {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    margin: 0 1rem;
+    margin: 0 2rem;
 }
 
 .tags a {
@@ -108,13 +118,14 @@ h2 {
 
 .searchform label {
     color: #F1FAEE;
+    text-align: center;
 }
 
 .cardcontainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 3rem;
     width: 100%;
 }
 
@@ -125,14 +136,14 @@ h2 {
     flex-direction: column;
     gap: 0.5rem;
     background-color: #eaeaea;
-    box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.5);
     border-radius: 1rem;
 }
 
 .projectcard hr {
-    color: black;
-    width: 50%;
-    align-self: center;
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.2)
 }
 
 .projectcard img {
@@ -140,16 +151,39 @@ h2 {
     border-radius: 1rem 1rem 0 0;
 }
 
+.projectcard .authorlink {
+    text-decoration: underline;
+    margin-top: -0.7rem;
+    padding: 0 0.5rem;
+}
+
+.authorlink {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.authorlink img {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
 .projectcard .shortdesc {
     font-family: 'Poppins', sans-serif;
     margin: 1rem;
     flex: 1 0 auto;
+    word-wrap: break-word;
 }
 
 .projectcard .tags {
     display: flex;
     justify-content: start;
     gap: 0.3rem;
+    margin: 0 0.7rem
 }
 
 .projectcard .tag {
@@ -162,36 +196,341 @@ h2 {
     padding: 1rem 0.5rem;
 }
 
+.profilecontent p {
+    padding: 0 1rem;
+}
+
+.noposts img {
+    width: 150px;
+}
+
+.noposts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .projectcard h3 {
     padding: 0.5rem;
 }
 
 .projectcard .bottom {
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-.createform {
+.projectcard .bottom div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.createform, .signinform {
     width: 75%;
     margin: auto;
 }
 
-.createform div {
+.createform div, .signinform div {
     display: flex;
     flex-direction: column;
     margin-top: 0.5rem;
 }
 
-.createform div input, .createform div textarea {
+.signinform input[type=file] {
+    border: none;
+}
+
+.tagselects {
+    display: flex; 
+    gap: 0.5rem;
+}
+
+.tagselects select {
+    width: 50%;
+    border-radius: 1rem;
+    padding: 0.5rem 0.7rem;
+}
+
+.createform div input, .createform div textarea, .signinform div input, .signinform div textarea {
     border-radius: 1rem;
     border: none;
     padding: 0.5rem 0.7rem;
 }
 
-.createform button {
+.createform div input[type=text], .createform div textarea, .signinform div input, .signinform div textarea {
+    border: 1px solid #1D3557;
+}
+
+.createform button, .signinform button {
     width: 75%;
     margin: auto;
 }
 
 .profileheader {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 1rem 1rem;
+    gap: 1rem;
+}
+
+.profileheader h1 {
     text-align: left;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.profilepiccontainer {
+    width: 50px;
+}
+
+.profileheader img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profilecardheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.profilecardheader button {
+    background: none;
+    color: black;
+    padding: 0;
+}
+
+.useractions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detailcontent {
+    margin: 1.5rem;
+}
+
+.detailcontent h1 {
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.detailheader {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0.5rem;
+}
+
+.authordate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.authordate div {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.authordate img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.tagslikes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.likes {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detailtags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detailtags a {
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.detaildesc {
+    margin: 0 1rem;
+}
+
+.detailinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.detailinfo img {
+    width: 100%;
+}
+
+/* MODAL */
+.modalcontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.4rem;
+    width: 75%;
+    padding: 1.3rem;
+    min-height: 200px;
+    position: absolute;
+    top: calc(50% - (200px/2));
+    background-color: #F6FBFB;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.modal .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#btn-close {
+    color: black;
+    background: none;
+    width: 33px;
+    font-weight: bold;
+}
+
+.modal .deletelink button {
+    background-color: #E44D38;
+    padding: 0.5rem 5rem;
+}
+
+.deletelink {
+    align-self: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (min-width: 480px) {
+    nav {
+        padding: 1rem 10%;
+    }
+
+    .searchform input {
+        margin: 0 5%;
+    }
+
+    .signinform {
+        width: 60%;
+    }
+
+    .filters {
+        margin: 0 5%;
+    }
+
+    .detailcontent {
+        margin: 1.5rem 20%;
+    }
+
+    .noposts img {
+        width: 200px;
+    }
+}
+
+@media only screen and (min-width: 770px) {
+    nav {
+        padding: 1rem 15%;
+    }
+
+    .profileheader {
+        padding: 1rem 15%;
+    }
+
+    .signinform {
+        width: 40%;
+    }
+
+    .profilecontent .bio {
+        padding: 1rem 15%;
+        text-align: left;
+    }
+
+    .searchform input {
+        margin: 0 5%;
+    }
+
+    .filters {
+        margin: 0 20%;
+    }
+
+    .detailcontent {
+        margin: 1.5rem 25%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    nav {
+        padding: 1rem 25%;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+
+    .signinform {
+        width: 25%;
+    }
+
+    .detailcontent {
+        margin: 1.5rem 35%;
+    }
+
+    .profilecontent {
+        padding: 1rem 25%;
+    }
+
+    .profileheader {
+        padding: 1rem 25%;
+    }
+
+    .cardcontainerpadding {
+        padding: 0 15%;
+    }
+
+    .profilecontent .bio {
+        padding: 0;
+        text-align: left;
+    }
+
+    .noposts img {
+        width: 250px;
+    }
 }
